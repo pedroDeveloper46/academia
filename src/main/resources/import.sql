@@ -1,3 +1,3 @@
-INSERT INTO plano (descricao) VALUES ('Ouro');
-INSERT INTO plano (descricao) VALUES ('Prata');
-INSERT INTO plano (descricao) VALUES ('Bronze');
+INSERT INTO plano (descricao, valor) VALUES ('Ouro', 120);
+INSERT INTO plano (descricao, valor) VALUES ('Prata', 80);
+INSERT INTO plano (descricao, valor) VALUES ('Bronze', 40);

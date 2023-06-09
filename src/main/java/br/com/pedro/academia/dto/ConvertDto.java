@@ -5,12 +5,17 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import br.com.pedro.academia.model.Aluno;
 import br.com.pedro.academia.model.Professor;
 
 public class ConvertDto {
 	
      @Autowired
      private ModelMapper modelMapper;
+     
+     public Aluno toAluno(AlunoDto alunoDto) {
+    	 return modelMapper.map(alunoDto, Aluno.class);
+     }
      
      public ProfessorDto toProfessorDto(Professor professor) {
     	 return modelMapper.map(professor, ProfessorDto.class);

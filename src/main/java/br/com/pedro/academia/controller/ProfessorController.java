@@ -1,6 +1,7 @@
 package br.com.pedro.academia.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 import javax.validation.ValidationException;
@@ -22,7 +23,7 @@ import br.com.pedro.academia.model.Professor;
 import br.com.pedro.academia.service.ProfessorService;
 
 @RestController
-@RequestMapping("/professor")
+@RequestMapping("/private/professor")
 public class ProfessorController {
 	
 	@Autowired
@@ -38,15 +39,6 @@ public class ProfessorController {
 	   return professorService.listarProfessor(cpf);
 	}
 	
-	@PostMapping("/cadastrar")
-	public Professor saveProfessor(@RequestBody @Valid Professor professor, Errors erros) {
-		
-		if (erros.hasErrors()) {
-			throw new ValidationException("Erro de validação: " + erros.getFieldError().getDefaultMessage());
-		}
-		
-		return professorService.saveProfessor(professor); 
-	}
 	
 	@PutMapping("/atualizar/{cpf}")
 	public ProfessorDto saveProfessor(@RequestBody @Valid ProfessorDto professor, Errors erros, @PathVariable String cpf) throws ProfessorNotFoundException {
@@ -57,5 +49,7 @@ public class ProfessorController {
 		
 		return professorService.updateProfessor(professor, cpf); 
 	}
+	
+
 
 }

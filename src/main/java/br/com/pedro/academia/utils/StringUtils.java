@@ -2,6 +2,7 @@ package br.com.pedro.academia.utils;
 
 import java.util.InputMismatchException;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -82,7 +83,7 @@ public class StringUtils {
 			return null;
 		}
 		
-		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+		PasswordEncoder encoder = new BCryptPasswordEncoder();
         return encoder.encode(senha);
 	}
 

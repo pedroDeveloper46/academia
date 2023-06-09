@@ -1,6 +1,7 @@
 package br.com.pedro.academia.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.ValidationException;
 
@@ -117,6 +118,10 @@ public class ProfessorService {
 		return true;
 		
 	}
+	
+//	public Optional<Professor> teste(){
+//		return professorRepository.findByEmailOptional("pedro46tr@gamil.com");
+//	}
 	
 	public boolean validateEmail(String email, Integer id) {
 
